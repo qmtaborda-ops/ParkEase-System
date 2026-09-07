@@ -6,7 +6,7 @@
 <title>PARKEASE — FEU Roosevelt Marikina</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
       <div class="campus-line">FEU Roosevelt Marikina — Parking Slot Monitoring</div>
     </div>
     <div class="status-cluster">
-      <span class="pill"><span class="dot" id="connDot"></span><span id="connText">server not-connected</span></span>
+      <span class="pill"><span class="dot" id="connDot"></span><span id="connText">server not connected</span></span>
       <span class="pill" id="clock">00:00:00</span>
     </div>
   </div>
@@ -33,26 +33,26 @@
 
 <main>
 
-  <!--  LIVE VIEW  -->
+  <!-- ================= LIVE VIEW ================= -->
   <section class="view" id="view-live">
     <div class="lede">
       <div>
         <h1>Slot availability, right now</h1>
+        <p>Two prototype bays near Gate 2 are fitted with ultrasonic sensors. Status updates automatically — no need to refresh.</p>
       </div>
       <div class="synced">last synced<br><b id="syncedAgo">just now</b></div>
     </div>
 
-    <div class="demo-banner" id="demoBanner">
-        Demo mode — the dashboard couldn't reach the PARKEASE server, so this is simulated sensor data. Point <code>API_BASE</code> in the script to your deployed server to go live.
-    </div>
+    <div class="demo-banner" id="demoBanner">Demo mode — the dashboard couldn't reach the PARKEASE server, so this is simulated sensor data. Point <code>API_BASE</code> in the script to your deployed server to go live.</div>
 
     <div class="slot-grid" id="liveSlots">
+      <!-- Static placeholder slots (10 bays). Replace with JS-rendered content later. -->
       <div class="slot-sign">
         <div class="band"></div>
         <div class="body">
           <div class="slot-num">BAY 01 · GATE 2</div>
           <div class="slot-letter">1</div>
-          <div class="slot-status">Available</div>
+          <div class="slot-status">Not-Occupied</div>
           <div class="readout"><span>12s ago</span></div>
         </div>
       </div>
@@ -70,7 +70,7 @@
         <div class="body">
           <div class="slot-num">BAY 03 · GATE 2</div>
           <div class="slot-letter">3</div>
-          <div class="slot-status">Available</div>
+          <div class="slot-status">Not-Occupied</div>
           <div class="readout"><span>8s ago</span></div>
         </div>
       </div>
@@ -88,7 +88,7 @@
         <div class="body">
           <div class="slot-num">BAY 05 · GATE 2</div>
           <div class="slot-letter">5</div>
-          <div class="slot-status">Available</div>
+          <div class="slot-status">Not-Occupied</div>
           <div class="readout"><span>15s ago</span></div>
         </div>
       </div>
@@ -115,7 +115,7 @@
         <div class="body">
           <div class="slot-num">BAY 08 · GATE 2</div>
           <div class="slot-letter">8</div>
-          <div class="slot-status">Available</div>
+          <div class="slot-status">Not-Occupied</div>
           <div class="readout"><span>20s ago</span></div>
         </div>
       </div>
@@ -124,7 +124,7 @@
         <div class="body">
           <div class="slot-num">BAY 09 · GATE 2</div>
           <div class="slot-letter">9</div>
-          <div class="slot-status">Available</div>
+          <div class="slot-status">Not-Occupied</div>
           <div class="readout"><span>6s ago</span></div>
         </div>
       </div>
@@ -146,8 +146,9 @@
     </div>
   </section>
 
-  <!--  ADMIN VIEW  -->
-
+  <!-- ================= ADMIN VIEW ================= -->
+  <!-- Note: the original passcode gate needed JS to check the input value,
+       so it's removed here. Add it back once app.js is reattached. -->
   <section class="view" id="view-admin">
     <div class="lede">
       <div>
@@ -160,7 +161,9 @@
     <div class="stat-row">
       <div class="stat"><b id="statAvailable">5</b><span>Slots available</span></div>
       <div class="stat"><b id="statOccupied">4</b><span>Slots occupied</span></div>
-      <div class="stat"><b id="statNotAvailable" class="danger">1</b><span>Slots On Service</span></div>
+      <div class="stat"><b id="statNotAvailable" class="danger">1</b><span>Slots not available</span></div>
+      <div class="stat"><b id="statEventsToday">18</b><span>Events today</span></div>
+      <div class="stat"><b id="statUptime">99.1%</b><span>Sensor uptime</span></div>
     </div>
 
     <div class="admin-slots" id="adminSlots">
@@ -195,5 +198,8 @@
 
 <footer>PARKEASE prototype — FEU Roosevelt Marikina · System &amp; hardware design, Group 1</footer>
 
+<!-- Reattach app.js later to restore dynamic polling, the clock, the passcode gate, and demo mode:
+<script src="app.js"></script>
+-->
 </body>
 </html>
