@@ -31,6 +31,10 @@
     *{animation:none !important; transition:none !important;}
   }
 
+  /* ---------- CSS-only tab switching ----------
+     The two radio inputs live at the top of <body>, as siblings of
+     <header> and <main>. We use :checked ~ to show/hide the matching
+     .view section and to style the active tab label. No JS required. */
   .tab-radio{
     position:absolute;
     opacity:0;
@@ -107,12 +111,12 @@
   }
   .dot{
     width:8px;height:8px;border-radius:50%;
-    background:var(--available);
-    box-shadow:0 0 0 3px rgba(47,158,110,0.25);
+    background:var(--occupied);
+    box-shadow:0 0 0 3px rgba(194,91,62,0.25);
   }
   .dot.off{background:var(--occupied); box-shadow:0 0 0 3px rgba(194,91,62,0.25);}
 
-  /*  Tabs  */
+  /* ---------- Tabs ---------- */
   nav.tabs{
     max-width:1100px;
     margin:0 auto;
@@ -159,7 +163,7 @@
   }
   .demo-banner.show{display:block;}
 
-  /*  Slot signage  */
+  /* ---------- Slot signage ---------- */
   .slot-grid{
     display:grid;
     grid-template-columns: repeat(5, 1fr); /* 5 per row */
@@ -236,7 +240,7 @@
   .legend span{display:inline-flex; align-items:center; gap:7px;}
   .legend i{width:10px;height:10px;border-radius:2px;display:inline-block;}
 
-  /*  Admin  */
+  /* ---------- Admin ---------- */
   .stat-row{
     display:flex;
     gap:48px;
