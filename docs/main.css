@@ -78,6 +78,26 @@
     gap:20px;
     flex-wrap:wrap;
   }
+
+  /* Logo + wordmark group: image sits to the left of the text,
+     vertically centered against it rather than stacked above it. */
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .log{
+    height:46px;
+    width:46px;
+    object-fit:contain;
+    display:block;
+    flex:0 0 auto;
+    background:var(--cream);
+    border-radius:6px;
+    padding:5px;
+  }
+  .brand-text{display:flex; flex-direction:column;}
+
   .wordmark{
     font-family:'Fraunces',serif;
     font-size:34px;
@@ -115,6 +135,7 @@
     box-shadow:0 0 0 3px rgba(194,91,62,0.25);
   }
   .dot.off{background:var(--occupied); box-shadow:0 0 0 3px rgba(194,91,62,0.25);}
+  .dot.on{background:var(--available); box-shadow:0 0 0 3px rgba(47,158,110,0.25);}
 
   /* ---------- Tabs ---------- */
   nav.tabs{
@@ -356,4 +377,11 @@
     padding:30px;
     font-size:12px;
     color:var(--muted);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 720px){
+    .slot-grid{grid-template-columns:repeat(2, 1fr);}
+    .top-inner{align-items:center;}
+    .wordmark{font-size:28px;}
   }
