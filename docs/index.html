@@ -16,7 +16,7 @@
 <header class="top">
   <div class="top-inner">
     <div class="brand">
-      <img class="log" src="https://w7.pngwing.com/pngs/661/284/png-transparent-feu-logo-feu-tamaraws-men-s-basketball-far-eastern-university-ateneo-blue-eagles-national-university-darts-leaf-university-flower.png" alt="FEU logo">
+      <img class="brand-logo" src="https://w7.pngwing.com/pngs/661/284/png-transparent-feu-logo-feu-tamaraws-men-s-basketball-far-eastern-university-ateneo-blue-eagles-national-university-darts-leaf-university-flower.png" alt="FEU logo">
       <div class="brand-text">
         <div class="wordmark">PARK<span>EASE</span></div>
         <div class="campus-line">FEU Roosevelt Marikina — Parking Slot Monitoring</div>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <!--  LIVE VIEW  -->
+  <!-- LIVE VIEW -->
   <section class="view" id="view-live">
     <div class="lede">
       <div>
@@ -148,7 +148,7 @@
     </div>
   </section>
 
-  <!--  ADMIN VIEW  -->
+  <!-- ADMIN VIEW -->
 
   <section class="view" id="view-admin">
     <div class="lede">
@@ -178,24 +178,30 @@
       <div class="mini-slot occupied"><span class="name">Bay 10</span><span class="tag">Occupied</span></div>
     </div>
 
-    <table class="log">
-      <caption>Recent activity</caption>
-      <thead>
-        <tr><th>Time</th><th>Slot</th><th>Event</th></tr>
-      </thead>
-      <tbody id="logBody">
-        <tr><td>14:02:11</td><td>Bay 2</td><td class="event-occupied">occupied</td></tr>
-        <tr><td>14:01:44</td><td>Bay 7</td><td class="event-occupied">occupied</td></tr>
-        <tr><td>13:58:09</td><td>Bay 4</td><td class="event-occupied">occupied</td></tr>
-        <tr><td>13:55:32</td><td>Bay 10</td><td class="event-occupied">occupied</td></tr>
-        <tr><td>13:50:02</td><td>Bay 1</td><td class="event-available">available</td></tr>
-      </tbody>
-    </table>
+    <div class="log-card">
+      <table class="log">
+        <caption>Recent activity</caption>
+        <thead>
+          <tr><th>Time</th><th>Slot</th><th>Event</th></tr>
+        </thead>
+        <tbody id="logBody">
+          <tr><td>14:02:11</td><td>Bay 2</td><td class="event-occupied">occupied</td></tr>
+          <tr><td>14:01:44</td><td>Bay 7</td><td class="event-occupied">occupied</td></tr>
+          <tr><td>13:58:09</td><td>Bay 4</td><td class="event-occupied">occupied</td></tr>
+          <tr><td>13:55:32</td><td>Bay 10</td><td class="event-occupied">occupied</td></tr>
+          <tr><td>13:50:02</td><td>Bay 1</td><td class="event-available">available</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
 </main>
 
-<footer>PARKEASE prototype — FEU Roosevelt Marikina · System &amp; hardware design, Group 1</footer>
+<footer>
+  <div class="footer-inner">
+    PARKEASE prototype — FEU Roosevelt Marikina · System &amp; hardware design, Group 1
+  </div>
+</footer>
 
 </body>
 </html>
